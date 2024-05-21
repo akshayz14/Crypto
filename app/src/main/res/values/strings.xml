@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Coin</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="btc">btc</string>
+    <string name="coin">Coin</string>
+    <string name="search">Search</string>
+    <string name="active_coins">Active Coins</string>
+    <string name="new_coins">New coins</string>
+    <string name="inactive_coins">Inactive coins</string>
+    <string name="only_coins">Only coins</string>
+    <string name="only_tokens">Only tokens</string>
+</resources>
