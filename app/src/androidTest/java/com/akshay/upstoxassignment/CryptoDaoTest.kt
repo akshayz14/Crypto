@@ -10,7 +10,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-class UpstoxDaoTest {
+class CryptoDaoTest {
 
 
     lateinit var cryptoDatabase: CryptoDatabase

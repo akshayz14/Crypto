@@ -1,6 +1,6 @@
 package com.akshay.upstoxassignment.di
 
-import com.akshay.upstoxassignment.domain.UpstoxService
+import com.akshay.upstoxassignment.domain.CryptoService
 import com.akshay.upstoxassignment.remote.ApiEndPoints
 import dagger.Module
 import dagger.Provides
@@ -48,8 +48,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideUpStoxService(retrofit: Retrofit): UpstoxService {
-        return retrofit.create(UpstoxService::class.java)
+    fun provideUpStoxService(retrofit: Retrofit): CryptoService {
+        return retrofit.create(CryptoService::class.java)
     }
 
 

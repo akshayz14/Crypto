@@ -16,7 +16,7 @@ import com.akshay.upstoxassignment.adapter.CryptoAdapter
 import com.akshay.upstoxassignment.base.AppConstants
 import com.akshay.upstoxassignment.data.CoinDataItem
 import com.akshay.upstoxassignment.databinding.ActivityMainBinding
-import com.akshay.upstoxassignment.viewmodel.UpstoxViewModel
+import com.akshay.upstoxassignment.viewmodel.CryptoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: CryptoAdapter
-    private val viewModel: UpstoxViewModel by viewModels()
+    private val viewModel: CryptoViewModel by viewModels()
     private var updatedList: List<CoinDataItem> = emptyList()
     private val selectedCriteria = mutableSetOf<String>()
 

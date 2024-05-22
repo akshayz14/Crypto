@@ -2,7 +2,7 @@ package com.akshay.upstoxassignment.domain
 
 import com.akshay.upstoxassignment.data.CoinDataItem
 
-interface UpStoxRepository {
+interface CryptoRepository {
 
     suspend fun fetchCryptocurrencies(): List<CoinDataItem>?
 

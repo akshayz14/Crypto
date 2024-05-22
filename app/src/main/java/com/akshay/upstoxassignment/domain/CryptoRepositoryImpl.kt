@@ -4,12 +4,12 @@ import com.akshay.upstoxassignment.data.CoinDataItem
 import com.akshay.upstoxassignment.db.CryptoItemDao
 import javax.inject.Inject
 
-class UpstoxRepositoryImpl @Inject constructor(
-    private val upstoxService: UpstoxService, private val cryptoItemDao: CryptoItemDao
-) : UpStoxRepository {
+class CryptoRepositoryImpl @Inject constructor(
+    private val cryptoService: CryptoService, private val cryptoItemDao: CryptoItemDao
+) : CryptoRepository {
 
     override suspend fun fetchCryptocurrencies(): List<CoinDataItem>? {
-        val cryptocurrencies = upstoxService.getCoinData().body()
+        val cryptocurrencies = cryptoService.getCoinData().body()
         val entities = cryptocurrencies?.map { cryptocurrency ->
             CoinDataItem(
                 name = cryptocurrency.name,

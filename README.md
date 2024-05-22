@@ -9,7 +9,7 @@ Coin is an Android application that shows a list of cryptocurrencies. This proje
 - Offline caching of data
 - Dependency injection with Hilt
 - Reactive UI with StateFlow
-- Unit testing with Junit, espresso and mockito.
+- Unit testing with Junit, espresso and mockito. 
 
 ## Architecture
 

@@ -3,7 +3,7 @@ package com.akshay.upstoxassignment.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akshay.upstoxassignment.data.CoinDataItem
-import com.akshay.upstoxassignment.domain.UpStoxRepository
+import com.akshay.upstoxassignment.domain.CryptoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -14,10 +14,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class UpstoxViewModel @Inject constructor(private val repository: UpStoxRepository) : ViewModel() {
+class CryptoViewModel @Inject constructor(private val repository: CryptoRepository) : ViewModel() {
 
-    private val _upStoxResponseStateFlow = MutableStateFlow<List<CoinDataItem>>(emptyList())
-    val upStoxResponseStateFlow: StateFlow<List<CoinDataItem>> = _upStoxResponseStateFlow
+    private val _CryptoResponseStateFlow = MutableStateFlow<List<CoinDataItem>>(emptyList())
+    val cryResponseStateFlow: StateFlow<List<CoinDataItem>> = _CryptoResponseStateFlow
 
 
     private val _searchQuery = MutableStateFlow("")
@@ -39,9 +39,9 @@ class UpstoxViewModel @Inject constructor(private val repository: UpStoxReposito
         viewModelScope.launch {
             val data = repository.getCryptocurrenciesFromDb()
             if (data.isEmpty()) {
-                _upStoxResponseStateFlow.value = repository.fetchCryptocurrencies() ?: emptyList()
+                _CryptoResponseStateFlow.value = repository.fetchCryptocurrencies() ?: emptyList()
             } else {
-                _upStoxResponseStateFlow.value = data
+                _CryptoResponseStateFlow.value = data
             }
         }
     }
@@ -58,7 +58,7 @@ class UpstoxViewModel @Inject constructor(private val repository: UpStoxReposito
      * the search query, ignoring case.
      */
     val filteredCryptocurrencies: StateFlow<List<CoinDataItem>> =
-        combine(_upStoxResponseStateFlow, _searchQuery) { cryptocurrencies, query ->
+        combine(_CryptoResponseStateFlow, _searchQuery) { cryptocurrencies, query ->
             if (query.isEmpty()) {
                 cryptocurrencies
             } else {
