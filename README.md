@@ -27,3 +27,8 @@ The app is built using Clean Architecture principles to ensure a separation of c
 - **Retrofit**: HTTP client for network operations.
 - **StateFlow**: State management for reactive UI updates.
 - **Repository Pattern**: Abstracts the data sources and provides a clean API for data access.
+
+
+##Problem statement
+[Updated Crypto Coins.pdf](https://github.com/user-attachments/files/15967127/Updated.Crypto.Coins.Assignment.pdf)
+
